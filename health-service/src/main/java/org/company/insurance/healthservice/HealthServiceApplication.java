@@ -1,13 +1,13 @@
-package org.company.insurance.taxservice;
+package org.company.insurance.healthservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TaxServiceApplication {
+public class HealthServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TaxServiceApplication.class, args);
+		SpringApplication.run(HealthServiceApplication.class, args);
 	}
 
 }

@@ -16,9 +16,8 @@ public class Client {
     private Long id;
 
 
-    @Column(name = "username", nullable = false)
-    private int tckn;
-
+    @Column(name = "trId", nullable = false)
+    private Long trId;
 
 
 }

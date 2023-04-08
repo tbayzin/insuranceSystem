@@ -8,16 +8,19 @@ import lombok.*;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="Client")
+@Table(name="Citizen")
 public class Citizen {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    //bu foreign olarak alınacak
+    @Column(name = "citizenshipId", nullable = false)
+    private int citizenshipId;
 
-    @Column(name = "username", nullable = false)
-    private int tckn;
+
+
 
 
 

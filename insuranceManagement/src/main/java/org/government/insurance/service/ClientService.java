@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-
-
-
 public class ClientService {
 
     @Autowired
@@ -18,5 +15,15 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
+    public void delete(Long id) {
+        clientRepository.deleteById(id);
+    }
 
+    public Client findById(Long id) {
+        return clientRepository.findById(id).orElse(null);
+    }
+
+    public Iterable<Client> findAll() {
+        return clientRepository.findAll();
+    }
 }

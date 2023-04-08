@@ -1,14 +1,12 @@
-package org.government.healthservice.service;
+package org.government.service;
 
-import org.government.healthservice.repository.CitizenRepository;
-import org.government.healthservice.model.Citizen;
+
+import org.government.model.Citizen;
+import org.government.repository.CitizenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-
-
-
 public class CitizenService {
 
     @Autowired
@@ -29,4 +27,5 @@ public class CitizenService {
     public Iterable<Citizen> findAll() {
         return citizenRepository.findAll();
     }
+
 }

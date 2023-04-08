@@ -21,7 +21,7 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/client")
     public Client save(@RequestBody Client client) {
-        if (clientInfoChecker.trIdChecker(client.getTrId())) {
+        if (clientInfoChecker.trIdChecker(client.getCitizenshipId())) {
             clientService.saveClient(client);
         } else {
             System.out.println("Given ID doesnt fit the ID format");
@@ -29,13 +29,22 @@ public class ClientController {
         return client;
     }
 
-    /*
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/client")
-    public Client getClient(@RequestBody Client client) {
-        clientService.saveClient(client);
-        return client;
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/client/{id}")
+    public void delete(@PathVariable Long id) {
+        clientService.delete(id);
     }
-    */
+
+    @ResponseStatus(HttpStatus.FOUND)
+    @GetMapping("/client/{id}")
+    public Client get(@PathVariable Long id) {
+        return clientService.findById(id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("clients")
+    public Iterable<Client> getAll() {
+        return clientService.findAll();
+    }
 
 }

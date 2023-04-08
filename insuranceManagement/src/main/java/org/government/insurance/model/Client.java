@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,8 +18,11 @@ public class Client {
     private Long id;
 
 
-    @Column(name = "trId", nullable = false)
-    private Long trId;
+    @Column(name = "citizenshiId", nullable = false)
+    private Long citizenshipId;
 
+
+    @Column(name = "registrationDate")
+    private LocalDate registrationDate;
 
 }

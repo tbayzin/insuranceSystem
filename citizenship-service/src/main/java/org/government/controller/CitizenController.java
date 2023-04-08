@@ -1,8 +1,9 @@
-package org.government.healthservice.controller;
+package org.government.controller;
 
 
-import org.government.healthservice.service.CitizenService;
-import org.government.healthservice.model.Citizen;
+
+import org.government.model.Citizen;
+import org.government.service.CitizenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,6 @@ public class CitizenController {
         return citizen;
     }
 
-
-
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/citizen/{id}")
     public void delete(@PathVariable Long id) {
@@ -40,4 +39,5 @@ public class CitizenController {
     public Iterable<Citizen> getAll() {
         return citizenService.findAll();
     }
+
 }

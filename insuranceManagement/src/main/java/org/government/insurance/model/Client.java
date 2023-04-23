@@ -18,7 +18,7 @@ public class Client {
     private Long id;
 
 
-    @Column(name = "citizenshiId", nullable = false)
+    @Column(name = "citizenshipId", nullable = false)
     private Long citizenshipId;
 
 

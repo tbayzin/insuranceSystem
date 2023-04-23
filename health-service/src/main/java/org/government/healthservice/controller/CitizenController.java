@@ -15,13 +15,11 @@ public class CitizenController {
     CitizenService citizenService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/client")
+    @PostMapping("/citizen")
     public Citizen save(@RequestBody Citizen citizen) {
         citizenService.saveCitizen(citizen);
         return citizen;
     }
-
-
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/citizen/{id}")

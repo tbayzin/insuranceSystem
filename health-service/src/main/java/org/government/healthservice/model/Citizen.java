@@ -1,26 +1,27 @@
 package org.government.healthservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.*;
+
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import lombok.*;
 
-@Entity
-@Data
+
+@Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Citizen")
+@Document("Citizen")
 public class Citizen {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     //bu foreign olarak alınacak
-    @Column(name = "citizenshipId", nullable = false)
+    @Field("citizenshipId")
     private int citizenshipId;
-
-
-
 
 
 
